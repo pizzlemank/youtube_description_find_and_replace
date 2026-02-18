@@ -1,7 +1,7 @@
 # YouTube Bulk Description Updater
 
-YouTube Studio doesn't have find-and-replace. This script let's you do that.
-
+YouTube Studio doesn't have find-and-replace. 
+This script let's you do that.
 
 ---
 
@@ -103,5 +103,6 @@ YouTube's free quota is **10,000 units/day**. Each video update costs ~50 units,
 ---
 
 ## License
+
 
 MIT
