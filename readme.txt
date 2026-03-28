@@ -1,6 +1,6 @@
 # YouTube Bulk Description Updater
 
-YouTube Studio doesn't have find-and-replace. 
+YouTube Studio doesn't have find-and-replace.
 This script let's you do that.
 
 ---
@@ -46,7 +46,7 @@ This script let's you do that.
 ### 2. Install dependencies
 
 ```bash
-pip install google-auth-oauthlib google-auth-httplib2 google-api-python-client
+pip install google-auth-oauthlib google-auth-httplib2 google-api-python-client pytrends pandas
 ```
 
 ### 3. Configure your replacements
@@ -102,7 +102,28 @@ YouTube's free quota is **10,000 units/day**. Each video update costs ~50 units,
 
 ---
 
-## License
+## Google Trends Merch Crawler
 
+A tool to identify T-shirt and merchandise opportunities from Google Trends.
+
+### Setup
+
+```bash
+pip install pytrends pandas
+```
+
+### Usage
+
+Run the crawler to update `trends.md`:
+
+```bash
+python crawl_trends.py
+```
+
+The results are automatically prepended to `trends.md`, with the latest trends at the top. It categorizes results into general opportunities and potential IP infringing designs.
+
+---
+
+## License
 
 MIT
