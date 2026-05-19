@@ -1,0 +1,36 @@
+name: Daily Google Trends Crawl
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run at 00:00 UTC every day
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install pytrends pandas
+
+      - name: Run crawl script
+        run: python crawl_trends.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add trends.md
+          git commit -m "docs: update trends.md with latest findings" || echo "No changes to commit"
+          git push
