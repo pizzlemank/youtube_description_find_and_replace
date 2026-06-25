@@ -1,0 +1,1 @@
+# Google Trends Merch Opportunities
